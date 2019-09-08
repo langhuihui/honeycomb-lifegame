@@ -1,0 +1,53 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="LifeGame.RuleUnit" 
+             mc:Ignorable="d"
+             d:DesignHeight="185" d:DesignWidth="192">
+	<UserControl.Resources>
+		
+		
+		<Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="IsChecked" Value="{x:Null}"></Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type CheckBox}">
+						<BulletDecorator Background="Transparent" SnapsToDevicePixels="true">
+							<BulletDecorator.Bullet>
+								<ed:RegularPolygon x:Name="regularPolygon" Width="20" Height="22" InnerRadius="1" PointCount="6" Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" VerticalAlignment="Top" Fill="{TemplateBinding Background}"/>
+							</BulletDecorator.Bullet>
+							
+						</BulletDecorator>
+						<ControlTemplate.Triggers>
+							
+							<Trigger Property="IsChecked" Value="True">
+								<Setter Property="Fill" TargetName="regularPolygon" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+							</Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                            	<Setter Property="Fill" TargetName="regularPolygon" Value="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+	<Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <CheckBox  Name="CheckBox3" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="0,16,0,0"  VerticalAlignment="Top"/>
+        <CheckBox Name="CheckBox2"  Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left"  Margin="10,0,0,0" VerticalAlignment="Top"/>
+		<CheckBox Name="CheckBoxCenter" Checked="OnChange" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left"  Margin="19,16,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="CheckBox1" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="CheckBox0" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left" Margin="38,16,0,0" VerticalAlignment="Top"/>
+        <CheckBox  Name="CheckBox4" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left"  Margin="9,32,0,0" VerticalAlignment="Top"/>
+        <CheckBox  Name="CheckBox5" Style="{DynamicResource CheckBoxStyle1}" HorizontalAlignment="Left"  Margin="28,32,0,0" VerticalAlignment="Top"/>
+		
+            
+	</Grid>
+</UserControl>

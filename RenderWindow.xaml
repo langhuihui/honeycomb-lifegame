@@ -1,0 +1,6 @@
+﻿<Window x:Class="LifeGame.RenderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RenderWindow" Height="600" Width="600">
+    <Image Name="MainImage"/>
+</Window>
